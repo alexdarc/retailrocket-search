@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { LoadingComponent } from './loading/loading.component';
+import { ProductsComponent } from './products/products.component';
+import { CardComponent } from './products/card/card.component';
 import { RetailrocketService } from './shared/services/retailrocket.service';
 
 describe('AppComponent', () => {
@@ -14,6 +16,8 @@ describe('AppComponent', () => {
         AppComponent,
         SearchBarComponent,
         LoadingComponent,
+        ProductsComponent,
+        CardComponent,
       ],
       providers: [ RetailrocketService ],
       imports: [ FormsModule, HttpClientTestingModule ],
