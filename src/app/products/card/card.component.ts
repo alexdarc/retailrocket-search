@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Product } from '../shared/models/product.model';
-import { RetailrocketService } from '../shared/services/retailrocket.service';
+import { Product } from '../../shared/models/product.model';
+import { RetailrocketService } from '../../shared/services/retailrocket.service';
 
 @Component({
   selector: 'app-card',

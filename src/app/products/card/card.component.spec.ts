@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CardComponent } from './card.component';
-import { RetailrocketService } from '../shared/services/retailrocket.service';
-import { Product } from '../shared/models/product.model';
+import { RetailrocketService } from '../../shared/services/retailrocket.service';
+import { Product } from '../../shared/models/product.model';
 
 describe('CardComponent', () => {
   let component: CardComponent;
