@@ -1,3 +1,8 @@
-<p>
-  products works!
-</p>
+<div class="row">
+  <div
+    class="col-lg-3 col-md-4 col-sm-6 mb-3"
+    *ngFor="let product of products"
+  >
+    <app-card [product]="product"></app-card>
+  </div>
+</div>

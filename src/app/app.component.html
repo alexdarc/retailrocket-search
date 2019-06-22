@@ -9,9 +9,15 @@
       <app-loading></app-loading>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <p>{{ searchValue }}</p>
+</div>
+<div
+  class="container"
+  *ngIf="products"
+>
+  <div class="row" >
+    <div class="col-12 mb-2">
+      <small class="text-muted">Найдено {{ products.length }} товаров</small>
     </div>
   </div>
+  <app-products [products]="products"></app-products>
 </div>

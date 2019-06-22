@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { RetailrocketService } from './shared/services/retailrocket.service';
+import { Product } from './shared/models/product.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  searchValue: string;
+export class AppComponent {
+  products: Product[];
 
   constructor(private retailrocketService: RetailrocketService) {}
 
-  ngOnInit() {
-  }
-
   onSearchInput(value: string) {
-    this.retailrocketService.forSearch(value)
-      .subscribe((...rest) => {
-        console.log('subscribe', rest);
-        this.searchValue = value;
+    const searchSub: Subscription = this.retailrocketService.forSearch(value)
+      .subscribe((products: Product[]) => {
+        searchSub.unsubscribe();
+
+        this.products = products;
       });
   }
 }
