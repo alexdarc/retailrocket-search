@@ -13,13 +13,13 @@ export class AppComponent implements OnInit {
   constructor(private retailrocketService: RetailrocketService) {}
 
   ngOnInit() {
-    this.retailrocketService.forSearch('test')
-      .subscribe((...rest) => {
-        console.log('subscribe', rest);
-      });
   }
 
   onSearchInput(value: string) {
-    this.searchValue = value;
+    this.retailrocketService.forSearch(value)
+      .subscribe((...rest) => {
+        console.log('subscribe', rest);
+        this.searchValue = value;
+      });
   }
 }
