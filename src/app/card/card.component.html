@@ -1,0 +1,31 @@
+<div class="card">
+  <a [href]="product.Url">
+    <img
+      class="card-img-top"
+      src="https://cdn.retailrocket.ru/api/1.0/partner/{{ partnerId }}/item/{{ product.ItemId }}/picture/?format=png&width=253&height=253&scale=both"
+      [alt]="product.Name"
+      height="253"
+    >
+  </a>
+  <div class="card-body">
+    <h5 class="card-title">
+      <a [href]="product.Url">
+        {{ product.Vendor }}
+      </a>
+    </h5>
+    <p class="card-text description">
+      {{ product.Description }}
+    </p>
+    <p class="card-text price">
+      <b class="price-current">{{ product.Price }} руб.</b>&nbsp;
+      <s
+        class="text-muted price-old"
+        *ngIf="product.OldPrice"
+      >{{ product.OldPrice }} руб.</s>
+    </p>
+    <a
+      class="btn btn-primary"
+      [href]="product.Url"
+    >Купить</a>
+  </div>
+</div>

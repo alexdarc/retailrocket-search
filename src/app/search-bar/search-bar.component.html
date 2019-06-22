@@ -1,0 +1,17 @@
+<div class="input-group">
+  <input
+    class="form-control search-input"
+    type="search"
+    [(ngModel)]="searchValue"
+    (input)="search()"
+    placeholder="Поисковой запрос"
+  >
+  <div class="input-group-append">
+    <button
+      class="btn btn-primary search-submit"
+      type="button"
+      (click)="search()"
+      [disabled]="searchValue.length === 0"
+    >Искать</button>
+  </div>
+</div>
