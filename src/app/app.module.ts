@@ -8,12 +8,14 @@ import { RetailrocketService } from './shared/services/retailrocket.service';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
