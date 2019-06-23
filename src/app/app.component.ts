@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Subscription } from 'rxjs';
 
 import { RetailrocketService } from './shared/services/retailrocket.service';
 import { Product } from './shared/models/product.model';
@@ -15,10 +14,8 @@ export class AppComponent {
   constructor(private retailrocketService: RetailrocketService) {}
 
   onSearchInput(value: string) {
-    const searchSub: Subscription = this.retailrocketService.forSearch(value)
+    this.retailrocketService.forSearch(value)
       .subscribe((products: Product[]) => {
-        searchSub.unsubscribe();
-
         this.products = products;
       });
   }
